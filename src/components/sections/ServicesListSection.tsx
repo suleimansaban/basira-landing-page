@@ -52,11 +52,8 @@ export default function ServicesListSection({ services }: ServicesListSectionPro
                     <div className="flex flex-col justify-start items-start gap-[8px] sm:gap-[12px] w-full mt-[8px] sm:mt-[16px]">
                       {service.items.map((item, index) => (
                         <div key={index} className="flex justify-start items-start gap-[8px] sm:gap-[12px]">
-                          <div className="mt-[2px] flex-shrink-0">
-                            <svg className="w-[16px] sm:w-[20px] h-[16px] sm:h-[20px]" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <circle cx="10" cy="10" r="10" fill="#0019BA"/>
-                              <path d="M6 10L9 13L14 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
+                          <div className="mt-[2px]">
+                            <img src="/images/checkmark-circle-02.png"/>
                           </div>
                           <p className="text-[13px] sm:text-[14px] font-lato font-normal leading-[19px] sm:leading-[21px] text-left text-text-secondary">
                             {item}
