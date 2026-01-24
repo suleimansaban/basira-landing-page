@@ -4,43 +4,139 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Primary Colors */
+    --primary-background: #0d1aa1;
+    --primary-foreground: #ffffff;
+    --primary-light: #0d1aa105;
+    --primary-medium: #0d1aa11e;
+    --primary-dark: #0d1aa12b;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Secondary Colors */
+    --secondary-background: #1d4ed8;
+    --secondary-foreground: #ffffff;
+    --secondary-light: #1d4ed82d;
+    --secondary-overlay: #5f91fc2b;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Accent Colors */
+    --accent-primary: #fa4e09;
+    --accent-primary-light: #fa4e092b;
+    --accent-success: #29b9092b;
+    --accent-success-alt: #64ff812b;
+    --accent-warning: #e8cb3230;
+    --accent-purple: #6438c247;
 
-    --primary: 216 100% 30%; /* Deep Blue #004E98 */
-    --primary-foreground: 210 40% 98%;
+    /* Background Colors */
+    --bg-main: #ffffff;
+    --bg-secondary: #fafafa;
+    --bg-tertiary: #fafafd;
+    --bg-overlay: #023574a3;
+    --bg-neutral: #d9d9d9;
+    --bg-light: #dedfef;
+    --bg-dark: #222222;
 
-    --secondary: 218 47% 20%; /* Navy */
-    --secondary-foreground: 210 40% 98%;
+    /* Text Colors */
+    --text-primary: #000000;
+    --text-secondary: #a4a4a4;
+    --text-accent: #0d1aa1;
+    --text-link: #1d4ed8;
+    --text-inverse: #ffffff;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Border Colors */
+    --border-primary: #d9d9d9;
+    --border-secondary: #e6e6e6;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Typography Variables */
+    --font-size-xs: 13px;
+    --font-size-sm: 14px;
+    --font-size-md: 15px;
+    --font-size-base: 16px;
+    --font-size-lg: 20px;
+    --font-size-xl: 32px;
+    --font-size-2xl: 36px;
+    --font-size-3xl: 40px;
+    --font-size-4xl: 48px;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Font Weight Variables */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Line Height Variables */
+    --line-height-xs: 16px;
+    --line-height-sm: 17px;
+    --line-height-md: 18px;
+    --line-height-base: 19px;
+    --line-height-lg: 20px;
+    --line-height-xl: 24px;
+    --line-height-2xl: 39px;
+    --line-height-3xl: 43px;
+    --line-height-4xl: 48px;
+    --line-height-5xl: 55px;
+    --line-height-6xl: 58px;
 
-    --radius: 0.5rem;
-  }
-}
+    /* Spacing Variables */
+    --spacing-1: 4px;
+    --spacing-1-5: 6px;
+    --spacing-2: 8px;
+    --spacing-2-5: 10px;
+    --spacing-3: 12px;
+    --spacing-3-5: 14px;
+    --spacing-4: 16px;
+    --spacing-4-5: 18px;
+    --spacing-5: 20px;
+    --spacing-5-5: 22px;
+    --spacing-6: 24px;
+    --spacing-6-5: 26px;
+    --spacing-7: 28px;
+    --spacing-7-5: 30px;
+    --spacing-8: 32px;
+    --spacing-8-5: 34px;
+    --spacing-10: 40px;
+    --spacing-10-5: 42px;
+    --spacing-11-5: 46px;
+    --spacing-12-5: 50px;
+    --spacing-13: 52px;
+    --spacing-14: 56px;
+    --spacing-14-5: 58px;
+    --spacing-16-5: 66px;
+    --spacing-17: 68px;
+    --spacing-19-5: 78px;
+    --spacing-22: 88px;
+    --spacing-24-5: 98px;
+    --spacing-28-5: 114px;
+    --spacing-29-5: 118px;
+    --spacing-40-5: 162px;
+    --spacing-44-5: 178px;
+    --spacing-61-5: 246px;
+    --spacing-69-5: 278px;
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
+    /* Border Radius Variables */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 16px;
+    --radius-2xl: 20px;
+    --radius-3xl: 22px;
+    --radius-4xl: 34px;
+    --radius-5xl: 44px;
+
+    /* Component-specific Colors */
+    --header-background: #ffffff;
+    --header-text: #000000;
+    --header-accent: #0d1aa1;
+
+    --button-primary-bg: #0d1aa1;
+    --button-secondary-bg: #fa4e09;
+    --button-text: #ffffff;
+
+    --line-primary: #0d1aa1;
+    --line-neutral: #d9d9d9;
+
+    --input-background: #ffffff;
+    --input-border: #e6e6e6;
+
+    --icon-background: #ffffff;
   }
 }
