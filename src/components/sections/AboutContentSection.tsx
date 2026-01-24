@@ -18,25 +18,25 @@ export default function AboutContentSection() {
             </div>
 
             {/* Content Section */}
-            <div className="w-full lg:flex-1 border border-border-primary rounded-xl p-[20px] sm:p-[40px]">
-              <div className="flex flex-col justify-start items-start gap-[15px] sm:gap-[30px]">
+            <div className="w-full lg:flex-1 lg:-ml-[70px] bg-background-main shadow-[0px_4px_30px_#eeeeee] border border-border-primary rounded-xl p-[14px] sm:p-[28px] relative z-10">
+              <div className="flex flex-col justify-start items-start gap-[11px] sm:gap-[22px]">
 
                 {/* About Us Heading */}
                 <div className="w-full">
-                  <h2 className="text-[28px] sm:text-[32px] md:text-[36px] lg:text-3xl font-lato font-black leading-[32px] sm:leading-[36px] md:leading-[40px] lg:leading-4xl text-left text-text-primary">
+                  <h2 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-lato font-bold leading-[28px] sm:leading-[32px] md:leading-[36px] lg:leading-[40px] text-left text-text-primary">
                     About <span className="text-accent-primary">Us</span>
                   </h2>
                 </div>
 
                 {/* Description */}
                 <div className="w-full">
-                  <p className="text-[14px] sm:text-base font-lato font-normal leading-[21px] sm:leading-[24px] text-left text-text-secondary">
+                  <p className="text-[13px] sm:text-[14px] font-lato font-normal leading-[19px] sm:leading-[21px] text-left text-text-secondary">
                     BasiraView Consulting Limited is a premier management and financial consulting firm
                     dedicated to driving sustainable growth and shaping industries. With over 20 years of collective
                     experience, we bring unparalleled strategic insight and practical solutions to organisations across
                     financial services, technology, real estate, FMCG, and manufacturing sectors.
                   </p>
-                  <p className="text-[14px] sm:text-base font-lato font-normal leading-[21px] sm:leading-[24px] text-left text-text-secondary mt-4">
+                  <p className="text-[13px] sm:text-[14px] font-lato font-normal leading-[19px] sm:leading-[21px] text-left text-text-secondary mt-[11px] sm:mt-[22px]">
                     We specialize in helping businesses overcome complex challenges, unlock hidden potential, and
                     execute growth strategies with measurable impact. Our value proposition is rooted in actionable
                     insights, real-world practicality, and a deep commitment to creating lasting partnerships with our clients.
