@@ -120,22 +120,21 @@ export default function ContactSection() {
                 </div>
                 
                 {/* Submit Button */}
-                <div className="w-full mt-[20px] sm:mt-[40px] mr-[5px] sm:mr-[10px]">
+                <div className="w-full mt-[20px] sm:mt-[40px] flex justify-center sm:justify-start sm:mr-[10px]">
                   <Button
                     text={isSubmitting ? "Sending..." : "Send Message"}
                     text_font_size="text-sm"
                     text_font_family="Inter"
                     text_font_weight="font-bold"
                     text_line_height="leading-sm"
-                    text_text_align="left"
+                    text_text_align="center"
                     text_color="text-button-text"
                     fill_background_color="bg-primary-background"
                     border_border_radius="rounded-md"
                     padding="t=26px,r=34px,b=26px,l=34px"
-                    layout_width="100%"
                     onClick={handleSubmit}
                     disabled={isSubmitting}
-                    className="hover:scale-105 active:scale-95 transition-transform duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="hover:scale-105 active:scale-95 transition-transform duration-200 disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
                   />
                 </div>
               </div>
@@ -168,17 +167,17 @@ export default function ContactSection() {
                 
                 {/* Email Contact */}
                 <div className="flex justify-start items-start gap-[9px] sm:gap-[18px] w-full mt-[89px] sm:mt-[178px]">
-                  <img 
-                    src="/images/img_mail_01.svg" 
+                  <img
+                    src="/images/img_mail_01.svg"
                     alt=""
-                    className="w-[25px] sm:w-[50px] h-[25px] sm:h-[50px]"
+                    className="w-[25px] sm:w-[50px] h-[25px] sm:h-[50px] flex-shrink-0"
                     loading="lazy"
                   />
-                  <div className="flex flex-col justify-start items-start gap-[9px] sm:gap-[18px] w-full">
+                  <div className="flex flex-col justify-start items-start gap-[9px] sm:gap-[18px] w-full min-w-0">
                     <h3 className="text-[22px] sm:text-xl font-lato font-black leading-[26px] sm:leading-2xl text-left text-text-primary">
                       Email Contact
                     </h3>
-                    <p className="text-[16px] sm:text-lg font-lato font-medium leading-[20px] sm:leading-xl text-left text-text-primary">
+                    <p className="text-[14px] sm:text-[16px] md:text-lg font-lato font-medium leading-[18px] sm:leading-[20px] md:leading-xl text-left text-text-primary break-all overflow-wrap-anywhere">
                       basiraviewconsultinglimited@gmail.com
                     </p>
                   </div>

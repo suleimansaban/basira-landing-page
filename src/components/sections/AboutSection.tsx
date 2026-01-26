@@ -25,7 +25,7 @@ export default function AboutSection() {
             </div>
             
             {/* Content Section */}
-            <div className="w-full lg:flex-1 lg:-ml-[51px] sm:-ml-[102px] bg-background-main shadow-[0px_4px_30px_#eeeeee] rounded-md p-[14px] sm:p-[28px] flex flex-col justify-start items-start gap-[11px] sm:gap-[22px] relative z-10">
+            <div className="w-full lg:flex-1 lg:-ml-[51px] sm:-ml-[102px] bg-background-main shadow-[0px_4px_30px_#eeeeee] rounded-md p-[14px] sm:p-[15px] flex flex-col justify-start items-start gap-[11px] sm:gap-[10px] relative z-10">
               
               {/* About Us Badge */}
               <div className="flex justify-center items-center gap-[3px] sm:gap-[6px] border border-border-primary rounded-3xl px-[3px] sm:px-[6px] py-[3px] sm:py-[6px] bg-background-main mt-[4px] sm:mt-[8px]">
@@ -42,11 +42,10 @@ export default function AboutSection() {
               </div>
               
               {/* Main Heading */}
-              <div className="w-full mt-[11px] sm:mt-[22px]">
+              <div className="w-full lg:w-[480px] mt-[11px] sm:mt-[22px]">
                 <h2 className="text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-lato font-bold leading-[28px] sm:leading-[36px] md:leading-[44px] lg:leading-[55px] text-left text-text-primary">
                   <span className="text-text-primary">The Core Mission </span>
-                  <span className="text-text-primary">Behind </span>
-                  <span className="text-[#f24e1e] font-medium">All Our Work</span>
+                  <span className="text-text-primary">Behind <span className="text-[#F24E1E] font-medium">All Our Work</span></span>
                 </h2>
               </div>
               

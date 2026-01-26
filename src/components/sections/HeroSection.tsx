@@ -1,37 +1,26 @@
 'use client';
-import { useState } from 'react';
 import Header from '../layout/Header';
 import RatingBar from '../ui/RatingBar';
-
+import { Avatar, AvatarImage } from '../ui/avatar';
 
 interface HeroSectionProps {
   loading: boolean;
 }
 
 export default function HeroSection({ loading }: HeroSectionProps) {
-  const [selectedTab, setSelectedTab] = useState<string>('Core Values')
-
-  const handleBookConsultation = (): void => {
-    // Navigate to contact section or open consultation form
-    const contactSection = document.getElementById('contact-section')
-    contactSection?.scrollIntoView({ behavior: 'smooth' })
-  }
-
-  const tabs = [
-    { id: 'core-values', label: 'Core Values' },
-    { id: 'mission', label: 'Our Mission' },
-    { id: 'vision', label: 'Our Vision' },
-    { id: 'team', label: 'Our Team' }
-  ]
-
-  const handleTabClick = (tabLabel: string): void => {
-    setSelectedTab(tabLabel)
+  const handleInputSubmit = (): void => {
+    // Handle input submission
+    const input = document.getElementById('hero-input') as HTMLInputElement
+    if (input && input.value) {
+      // Process the input value
+      console.log('Input value:', input.value)
+    }
   }
 
   return (
-    <section className="w-full bg-[url('/images/img_rectangle_3073.png')] bg-cover bg-center bg-no-repeat">
+    <section className="w-full bg-[url('/images/img_rectangle_3073.png')] bg-cover bg-center bg-no-repeat min-h-screen">
       {/* Background Overlay */}
-      <div className="w-full bg-background-overlay">
+      <div className="w-full bg-background-overlay min-h-screen">
         <div className="flex flex-col justify-start items-center w-full">
           
           {/* Header */}
@@ -39,100 +28,75 @@ export default function HeroSection({ loading }: HeroSectionProps) {
           
           {/* Hero Content Container */}
           <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col justify-start items-center w-full gap-[42px] sm:gap-[84px] mt-[42px] sm:mt-[84px] pb-[42px]">
+            <div className="flex flex-col justify-start items-center w-full gap-8 sm:gap-12 mt-12 sm:mt-20 pb-12">
               
-              {/* Logo and Rating Section */}
-              <div className="flex flex-col justify-start items-center w-full max-w-[1272px]">
-                <div className="flex flex-col sm:flex-row justify-center items-center w-full sm:w-auto gap-[5px] sm:gap-[10px]">
-                  
-                  {/* Company Logo */}
-                  <div className="flex justify-center items-center w-full sm:w-auto">
-                    <img 
-                      src="/images/img_group_306.png" 
-                      alt="BasiraView Consulting Logo"
-                      className="w-[59px] sm:w-[118px] h-[25px] sm:h-[50px]"
-                      loading="eager"
-                    />
-                  </div>
-                  
-                  {/* Client Rating */}
-                  <div className="flex flex-col justify-start items-center sm:items-start gap-[3px] sm:gap-[6px] mb-[2px] sm:mb-[4px]">
-                    <p className="text-xs sm:text-[13px] font-lato font-normal leading-[8px] sm:leading-[16px] text-center text-text-inverse">
-                      1k+ Client Satisfaction
-                    </p>
-                    <RatingBar 
-                      value={5} 
-                      readonly={true} 
-                      size="small"
-                      starColor="#fa4e09"
-                      className="justify-center sm:justify-start"
-                    />
-                  </div>
+              {/* Client Satisfaction Section with Avatars */}
+              <div className="flex items-center gap-3 sm:gap-4">
+                {/* Three Overlapping Avatars */}
+                <div className="flex items-center -space-x-2 sm:-space-x-3">
+                  <Avatar className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 border-2 border-text-inverse z-10">
+                    <AvatarImage src="/images/img_ellipse_71.png" alt="Client" />
+                  </Avatar>
+                  <Avatar className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 border-2 border-text-inverse z-20">
+                    <AvatarImage src="/images/img_ellipse_72.png" alt="Client" />
+                  </Avatar>
+                  <Avatar className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 border-2 border-text-inverse z-30">
+                    <AvatarImage src="/images/img_ellipse_73.png" alt="Client" />
+                  </Avatar>
                 </div>
                 
-                {/* Main Headline */}
-                <div className="flex flex-col justify-center items-center w-full mt-[23px] sm:mt-[46px]">
-                  <h1 className="text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-lato font-black leading-[28px] sm:leading-[36px] md:leading-[44px] lg:leading-[55px] text-center text-text-inverse max-w-4xl">
-                    <span className="text-text-inverse">See Your Business Clearly. Grow </span>
-                    <span className="text-text-inverse">Strategically. </span>
-                    <span className="text-accent-primary">Execute Confidently.</span>
-                  </h1>
-                </div>
-                
-                {/* Subtitle */}
-                <div className="flex justify-center items-center w-full mt-[9px] sm:mt-[18px]">
-                  <p className="text-[16px] sm:text-[20px] font-lato font-normal leading-[20px] sm:leading-[24px] text-center text-text-inverse max-w-3xl">
-                    Strategic consulting that gives organizations clarity, direction, and measurable 
-                    growth through insight, focus, and disciplined execution.
+                {/* Client Rating */}
+                <div className="flex flex-col justify-start items-start gap-1 sm:gap-2">
+                  <p className="text-sm sm:text-base font-lato font-normal leading-4 sm:leading-5 text-text-inverse whitespace-nowrap">
+                    1k+ Client Satisfaction
                   </p>
+                  <RatingBar 
+                    value={5} 
+                    readonly={true} 
+                    size="small"
+                    starColor="#FFD700"
+                    className="justify-start"
+                  />
                 </div>
-                
-                {/* CTA Button */}
-                <div className="flex justify-center items-center mt-[16px] sm:mt-[32px]">
-                  <div className="bg-background-main rounded-2xl px-[6px] sm:px-[12px] py-[3px] sm:py-[6px] flex items-center gap-[12px] sm:gap-[24px] hover:scale-105 transition-transform duration-200 cursor-pointer" onClick={handleBookConsultation}>
-                    <p className="text-xs sm:text-sm font-inter font-bold leading-[14px] sm:leading-[17px] text-text-link ml-[5px] sm:ml-[10px]">
-                      Book Consultation
-                    </p>
-                    <div className="bg-primary-background rounded-2xl p-[3px] sm:p-[6px] flex justify-center items-center">
-                      <img 
-                        src="/images/img_right_arrow.png" 
-                        alt="Arrow"
-                        className="w-[17px] sm:w-[34px] h-[17px] sm:h-[34px]"
-                      />
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Navigation Tabs */}
-                <div className="w-full flex justify-center items-center mt-[33px] sm:mt-[66px] mb-[10px] sm:mb-[20px]">
-                  <div className="bg-secondary-light shadow-[0px_4px_25px_#888888ff] rounded-none px-[28px] sm:px-[56px] py-0 flex flex-wrap justify-center items-center gap-[15px] sm:gap-[30px] w-full max-w-5xl">
-                    {tabs.map((tab, index) => (
-                      <div key={tab.id} className="flex items-center gap-[15px] sm:gap-[30px] py-[10px] sm:py-[20px]">
-                        <button
-                          onClick={() => handleTabClick(tab.label)}
-                          className="flex items-center gap-[6px] sm:gap-[12px] px-[3px] sm:px-[6px] hover:scale-105 transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-primary-background rounded-md"
-                          role="tab"
-                          aria-selected={selectedTab === tab.label}
-                        >
-                          <p className={`text-[14px] sm:text-base font-lato font-bold leading-[18px] sm:leading-lg ${
-                            selectedTab === tab.label ? 'text-text-inverse' : 'text-text-inverse'
-                          }`}>
-                            {tab.label}
-                          </p>
-                          <img 
-                            src="/images/img_right_arrow.png" 
-                            alt=""
-                            className="w-[17px] sm:w-[34px] h-[17px] sm:h-[34px]"
-                          />
-                        </button>
-                        
-                        {/* Vertical separator line */}
-                        {index < tabs.length - 1 && (
-                          <div className="hidden sm:block w-[1px] sm:w-[2px] h-[27px] sm:h-[54px] bg-text-inverse opacity-30" />
-                        )}
-                      </div>
-                    ))}
-                  </div>
+              </div>
+              
+              {/* Main Headline */}
+              <div className="flex flex-col justify-center items-center w-full mt-4 sm:mt-8 px-4">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-lato font-black leading-tight text-center text-text-inverse max-w-4xl">
+                  <span className="text-text-inverse">See Your Business Clearly. Grow </span>
+                  <span className="text-text-inverse">Strategically. </span>
+                  <span className="text-accent-primary">Execute Confidently.</span>
+                </h1>
+              </div>
+              
+              {/* Subtitle */}
+              <div className="flex justify-center items-center w-full mt-4 sm:mt-6 px-4">
+                <p className="text-base sm:text-lg md:text-xl font-lato font-normal leading-6 sm:leading-7 text-center text-text-inverse max-w-3xl">
+                  Strategic consulting that gives organizations clarity, direction, and measurable 
+                  growth through insight, focus, and disciplined execution.
+                </p>
+              </div>
+              
+              {/* Input Field with Arrow Button */}
+              <div className="flex justify-center items-center w-full mt-8 sm:mt-12 max-w-2xl px-4">
+                <div className="flex items-center w-full bg-background-main rounded-2xl overflow-hidden shadow-lg">
+                  <input
+                    id="hero-input"
+                    type="text"
+                    placeholder="Enter your email or search..."
+                    className="flex-1 px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg font-lato text-text-primary placeholder:text-text-secondary focus:outline-none bg-transparent"
+                  />
+                  <button
+                    onClick={handleInputSubmit}
+                    className="bg-primary-background p-3 sm:p-4 flex justify-center items-center hover:bg-primary-dark transition-colors duration-200 cursor-pointer"
+                    aria-label="Submit"
+                  >
+                    <img 
+                      src="/images/img_right_arrow.png" 
+                      alt="Arrow"
+                      className="w-5 h-5 sm:w-6 sm:h-6"
+                    />
+                  </button>
                 </div>
               </div>
             </div>

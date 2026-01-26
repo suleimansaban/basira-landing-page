@@ -81,9 +81,9 @@ export default function HomePage() {
     <>
       <main>
         <HeroSection loading={loading} />
-        <ProcessSection />
         <AboutSection />
         <StatisticsSection statistics={statistics} loading={loading} />
+        <ProcessSection />
         <ServicesSection services={services} loading={loading} />
         <CoreValuesSection />
         <SectorExpertiseSection sectors={sectors} loading={loading} />

@@ -1,99 +1,191 @@
 'use client';
+
+import Image from 'next/image';
+
 export default function ProcessSection() {
   const processSteps = [
     {
       id: 1,
       title: 'Assessment',
-      description: 'A thorough analysis of the client\'s current state, identifiying root causes of challenges and mapping opportunities',
+      description:
+        "A thorough analysis of the client's current state, identifying root causes of challenges and mapping opportunities",
       icon: '/images/img_test_results.png',
-      bgColor: 'bg-primary-background',
-      textColor: 'text-text-inverse',
-      descColor: 'text-text-inverse'
     },
     {
       id: 2,
       title: 'Strategy',
-      description: 'A thorough analysis of the client\'s current state, identifiying root causes of challenges and mapping opportunities',
+      description:
+        "A thorough analysis of the client's current state, identifying root causes of challenges and mapping opportunities",
       icon: '/images/img_mind_map.png',
-      bgColor: 'bg-background-main',
-      textColor: 'text-text-primary',
-      descColor: 'text-text-secondary'
     },
     {
       id: 3,
       title: 'Execution',
-      description: 'Working hand-in-hand with client teams to ensure effective implementation of strategies, providing guidance and suppport',
+      description:
+        'Working hand-in-hand with client teams to ensure effective implementation of strategies, providing guidance and support',
       icon: '/images/img_goal.png',
-      bgColor: 'bg-background-main',
-      textColor: 'text-text-primary',
-      descColor: 'text-text-secondary'
     },
     {
       id: 4,
-      title: 'Sustainability',
-      description: 'Working hand-in-hand with client teams to ensure effective implementation of strategies, providing guidance and suppport',
-      icon: '/images/img_greentech.png',
-      bgColor: 'bg-background-main',
-      textColor: 'text-text-primary',
-      descColor: 'text-text-secondary'
-    }
-  ]
+      title: 'Execution',
+      description:
+        'Working hand-in-hand with client teams to ensure effective implementation of strategies, providing guidance and support',
+      icon: '/images/img_goal.png',
+    },
+  ];
 
   return (
-    <section className="w-full py-[31px] sm:py-[10px]">
-      <div className="w-full max-w-[1440px] mx-auto px-[28px] sm:px-[56px]">
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-[15px] sm:gap-[30px] w-full">
-          {processSteps?.map((step, index) => (
-            <div key={step?.id} className="flex items-center gap-[15px] sm:gap-[30px] w-full sm:w-auto">
-              
-              {/* Process Card */}
-              <div className={`${step?.bgColor} rounded-xl p-[9px] sm:p-[18px] flex flex-col justify-start items-start gap-[13px] sm:gap-[26px] w-full sm:w-[153px] min-h-[122px] sm:min-h-[244px] hover:scale-105 transition-transform duration-300`}>
-                
-                {/* Icon and Arrow Container */}
-                <div className="flex justify-between items-start w-full">
-                  <img 
-                    src={step?.icon} 
-                    alt={step?.title}
-                    className="w-[29px] sm:w-[58px] h-[32px] sm:h-[64px]"
-                    loading="lazy"
-                  />
-                  {step?.id === 1 && (
-                    <img 
-                      src="/images/img_right_arrow.png" 
-                      alt=""
-                      className="w-[17px] sm:w-[34px] h-[17px] sm:h-[34px] mt-[6px] sm:mt-[12px]"
-                    />
-                  )}
-                </div>
-                
-                {/* Content */}
-                <div className="flex flex-col justify-start items-start gap-[9px] sm:gap-[18px] w-full">
-                  <h3 className={`text-[16px] sm:text-lg font-lato font-bold leading-[20px] sm:leading-xl ${step?.textColor}`}>
-                    {step?.title}
-                  </h3>
-                  <p className={`text-[12px] sm:text-base font-lato font-normal leading-[15px] sm:leading-base ${step?.descColor}`}>
-                    {step?.description}
-                  </p>
-                </div>
-              </div>
-              
-              {/* Vertical Line Separator */}
-              {index < processSteps?.length - 1 && (
-                <div className="hidden sm:block">
-                  {index === 0 || index === 3 ? (
-                    <div className="w-[1px] sm:w-[2px] h-[122px] sm:h-[244px] bg-border-primary" />
-                  ) : (
-                    <div className="w-[2px] h-[244px] bg-border-primary" />
-                  )}
-                </div>
+    <section className="relative py-12 md:py-20 lg:py-24 bg-white overflow-hidden">
+      {/* TITLE */}
+      <h2 className="text-3xl md:text-4xl font-lato font-bold text-center mb-12 md:mb-16 lg:mb-20 px-4">
+        Our Strategic <span className="text-orange-500">Approach</span>
+      </h2>
+
+      {/* MOBILE & TABLET: Vertical Layout */}
+      <div className="block lg:hidden px-4">
+        <div className="relative max-w-sm mx-auto">
+          {processSteps.map((step, index) => (
+            <div key={step.id} className="relative mb-16 last:mb-0">
+              {/* Connecting Line */}
+              {index < processSteps.length - 1 && (
+                <div className="absolute left-1/2 -translate-x-1/2 top-[280px] w-0.5 h-16 bg-[#0D1BA1]" />
               )}
+
+              <MobileStep step={step} />
             </div>
           ))}
-          
-          {/* Final separator line */}
-          <div className="hidden sm:block w-[1px] sm:w-[2px] h-[122px] sm:h-[244px] bg-border-primary" />
+        </div>
+      </div>
+
+      {/* DESKTOP: Horizontal Zigzag Layout */}
+      <div className="hidden lg:block">
+        <div className="relative mx-auto w-[1263px] h-[405px]">
+          {/* Desktop SVG ZIG-ZAG LINE */}
+          <svg
+            width="1263"
+            height="405"
+            viewBox="0 0 1263 405"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="absolute inset-0"
+          >
+            <path
+              d="
+                M 40 20
+                V 360
+                H 340
+                V 20
+                H 640
+                V 360
+                H 940
+                V 20
+                H 1240
+              "
+              stroke="#0D1BA1"
+              strokeWidth="1"
+            />
+          </svg>
+
+          {/* Desktop STEPS */}
+          <DesktopStep step={processSteps[0]} x={60} y={40} />
+          <DesktopStep step={processSteps[1]} x={360} y={40} />
+          <DesktopStep step={processSteps[2]} x={660} y={40} />
+          <DesktopStep step={processSteps[3]} x={950} y={40} />
         </div>
       </div>
     </section>
+  );
+}
+
+/* ---------------- MOBILE STEP COMPONENT ---------------- */
+function MobileStep({
+  step,
+}: {
+  step: {
+    id: number;
+    title: string;
+    description: string;
+    icon: string;
+  };
+}) {
+  return (
+    <div className="relative">
+      {/* NUMBER CIRCLE */}
+      <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full border-[3px] border-[#0D1BA1] bg-white text-[#0D1BA1] font-lato font-bold flex items-center justify-center z-10 text-lg">
+        {step.id}
+      </div>
+
+      {/* CONTENT BOX */}
+      <div className="p-5 bg-white border-2 border-gray-300 rounded-xl shadow-sm">
+        <Image
+          src={step.icon}
+          alt={step.title}
+          width={50}
+          height={50}
+          className="mb-3 grayscale opacity-70"
+        />
+
+        <h3 className="font-lato font-bold mb-2 text-black text-lg">
+          {step.title}
+        </h3>
+
+        <p className="text-sm font-lato font-normal text-gray-700 leading-relaxed">
+          {step.description}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/* ---------------- DESKTOP STEP COMPONENT ---------------- */
+function DesktopStep({
+  step,
+  x,
+  y,
+}: {
+  step: {
+    id: number;
+    title: string;
+    description: string;
+    icon: string;
+  };
+  x: number;
+  y: number;
+}) {
+  const isTop = step.id % 2 !== 0;
+
+  return (
+    <div
+      className="absolute w-[260px]"
+      style={{ left: x, top: y }}
+    >
+      {/* NUMBER CIRCLE */}
+      <div
+        className={`absolute left-[-13px] -translate-x-1/2 ${
+          isTop ? '-top-10' : '-bottom-10'
+        } w-14 h-14 rounded-full border-2 border-[#0D1BA1] bg-white text-[#0D1BA1] font-lato font-bold flex items-center justify-center z-10`}
+      >
+        {step.id}
+      </div>
+
+      {/* CONTENT BOX */}
+      <div className="p-6 bg-white">
+        <Image
+          src={step.icon}
+          alt={step.title}
+          width={40}
+          height={40}
+          className="mb-4"
+        />
+
+        <h3 className="font-lato font-semibold mb-2 text-black">
+          {step.title}
+        </h3>
+
+        <p className="text-sm font-lato font-normal text-gray-600 leading-relaxed">
+          {step.description}
+        </p>
+      </div>
+    </div>
   );
 }
