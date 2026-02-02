@@ -4,14 +4,11 @@ import Header from '../layout/Header';
 export default function AboutHeroSection() {
   return (
     <section className="w-full bg-[url('/images/img_rectangle_3073.png')] bg-cover bg-center bg-no-repeat">
-      {/* Background Overlay */}
       <div className="w-full bg-background-overlay">
         <div className="flex flex-col justify-start items-center w-full">
 
-          {/* Header */}
           <Header />
 
-          {/* Hero Content Container */}
           <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col justify-start items-center w-full gap-[15px] sm:gap-[30px] mt-[42px] sm:mt-[84px] pb-[42px] sm:pb-[84px]">
 
