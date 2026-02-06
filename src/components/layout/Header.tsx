@@ -72,7 +72,12 @@ const Header = () => {
             <div className="flex items-center gap-3">
 
               <div className="flex flex-col">
-                <img src="/images/logo.png" alt="" />
+                <img
+                  src="/images/logoupdated.svg"
+                  alt="BasiraView Consulting Logo"
+                  className="h-20 w-auto object-contain"
+                  style={{ imageRendering: 'crisp-edges', WebkitFontSmoothing: 'antialiased' }}
+                />
               </div>
             </div>
 
