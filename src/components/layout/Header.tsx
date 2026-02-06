@@ -73,10 +73,9 @@ const Header = () => {
 
               <div className="flex flex-col">
                 <img
-                  src="/images/logoupdated.svg"
+                  src="/images/basiraLogo.png"
                   alt="BasiraView Consulting Logo"
-                  className="h-20 w-auto object-contain"
-                  style={{ imageRendering: 'crisp-edges', WebkitFontSmoothing: 'antialiased' }}
+                  className="w-[268px] h-[70px] object-cover"
                 />
               </div>
             </div>
