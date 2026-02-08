@@ -75,7 +75,7 @@ const Header = () => {
                 <img
                   src="/images/basiraLogo.png"
                   alt="BasiraView Consulting Logo"
-                  className="w-[268px] h-[70px] object-cover"
+                  className="w-[268px] h-[80px] object-fit"
                 />
               </div>
             </div>

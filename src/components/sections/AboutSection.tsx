@@ -25,7 +25,7 @@ export default function AboutSection() {
             </div>
             
             {/* Content Section */}
-            <div className="w-full lg:flex-1 lg:-ml-[51px] sm:-ml-[102px] bg-background-main shadow-[0px_4px_30px_#eeeeee] rounded-md p-[14px] sm:p-[15px] flex flex-col justify-start items-start gap-[11px] sm:gap-[10px] relative z-10">
+            <div className="w-full lg:flex-1 -mt-[6rem] sm:-mt-14 lg:mt-0 lg:-ml-[51px] sm:-ml-[102px] bg-background-main shadow-[0px_4px_30px_#eeeeee] rounded-md p-[14px] sm:p-[15px] flex flex-col justify-start items-start gap-[11px] sm:gap-[10px] relative z-10">
               
               {/* About Us Badge */}
               <div className="flex justify-center items-center gap-[3px] sm:gap-[6px] border border-border-primary rounded-3xl px-[3px] sm:px-[6px] py-[3px] sm:py-[6px] bg-background-main mt-[4px] sm:mt-[8px]">

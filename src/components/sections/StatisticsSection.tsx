@@ -15,12 +15,19 @@ export default function StatisticsSection({ statistics, loading }: StatisticsSec
   return (
     <section className="w-full py-[17px] sm:py-[34px]">
       <div className="w-full max-w-[1440px] mx-auto px-[47px] sm:px-[94px] pr-[28px] sm:pr-[56px]">
-        <div className="flex flex-col sm:flex-row justify-start items-center gap-[29px] sm:gap-[58px] md:gap-[116px] w-full">
+        <div className="grid grid-cols-2 items-stretch sm:flex sm:flex-row justify-start sm:items-center gap-0 sm:gap-[58px] md:gap-[116px] w-full">
           
           {loading ? (
             // Loading skeleton
             Array.from({ length: 4 }).map((_, index) => (
-              <div key={index} className="flex items-center gap-[29px] sm:gap-[58px] w-full sm:w-auto">
+              <div
+                key={index}
+                className={`flex sm:items-center gap-[29px] sm:gap-[58px] w-full h-full sm:w-auto sm:h-auto p-[15px] sm:p-0 ${
+                  index % 2 === 0 ? 'border-r sm:border-r-0 border-border-primary' : ''
+                } ${
+                  index < 2 ? 'border-b sm:border-b-0 border-border-primary' : ''
+                }`}
+              >
                 <div className="flex flex-col justify-start items-start gap-[9px] sm:gap-[18px] w-full sm:w-[118px]">
                   <div className="animate-pulse bg-background-light rounded h-[29px] sm:h-[58px] w-full" />
                   <div className="flex flex-col justify-start items-start gap-[3px] sm:gap-[6px] w-full">
@@ -36,7 +43,14 @@ export default function StatisticsSection({ statistics, loading }: StatisticsSec
           ) : (
             // Actual statistics
             statistics.map((stat, index) => (
-              <div key={stat.id} className="flex items-center gap-[29px] sm:gap-[58px] w-full sm:w-auto">
+              <div
+                key={stat.id}
+                className={`flex sm:items-center gap-[29px] sm:gap-[58px] w-full h-full sm:w-auto sm:h-auto p-[15px] sm:p-0 ${
+                  index % 2 === 0 ? 'border-r sm:border-r-0 border-border-primary' : ''
+                } ${
+                  index < 2 ? 'border-b sm:border-b-0 border-border-primary' : ''
+                }`}
+              >
                 <div className="flex flex-col justify-start items-start gap-[9px] sm:gap-[18px] w-full sm:w-[118px] mb-[3px] sm:mb-[6px]">
                   
                   {/* Statistics Value */}

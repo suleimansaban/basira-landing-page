@@ -59,7 +59,7 @@ export default function SectorExpertiseSection({ sectors, loading }: SectorExper
             // Actual sectors
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
               {sectors.map((sector, index) => (
-                <div key={sector.id} className="bg-background-secondary rounded-md p-[9px] sm:p-[18px] flex flex-col justify-start items-start gap-[13px] sm:gap-[26px] min-h-[200px] sm:min-h-[400px] hover:scale-105 transition-transform duration-300 shadow-sm hover:shadow-md">
+                <div key={sector.id} className="bg-background-secondary border-2 border-[#000000]-300 rounded-2xl rounded-md p-[9px] sm:p-[18px] flex flex-col justify-start items-start gap-[13px] sm:gap-[26px] min-h-[200px] sm:min-h-[400px] hover:scale-105 transition-transform duration-300 shadow-sm hover:shadow-md">
                   
                   {/* Sector Icon */}
                   <div className={`${getSectorBackgroundColor(index)} rounded-md p-[6px] sm:p-[12px] flex justify-center items-center w-[41px] sm:w-[82px] h-[37px] sm:h-[74px]`}>

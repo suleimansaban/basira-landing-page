@@ -8,12 +8,13 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ loading }: HeroSectionProps) {
-  const handleInputSubmit = (): void => {
-    // Handle input submission
-    const input = document.getElementById('hero-input') as HTMLInputElement
-    if (input && input.value) {
-      // Process the input value
-      console.log('Input value:', input.value)
+  const handleBookConsultation = (): void => {
+    const contactSection = document.getElementById('contact-section')
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      // If contact section doesn't exist, navigate to home and then scroll
+      window.location.href = '/#contact-section'
     }
   }
 
@@ -77,27 +78,14 @@ export default function HeroSection({ loading }: HeroSectionProps) {
                 </p>
               </div>
               
-              {/* Input Field with Arrow Button */}
-              <div className="flex justify-center items-center w-full mt-8 sm:mt-12 max-w-2xl px-4">
-                <div className="flex items-center w-full bg-background-main rounded-2xl overflow-hidden shadow-lg">
-                  <input
-                    id="hero-input"
-                    type="text"
-                    placeholder="Enter your email or search..."
-                    className="flex-1 px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg font-lato text-text-primary placeholder:text-text-secondary focus:outline-none bg-transparent"
-                  />
-                  <button
-                    onClick={handleInputSubmit}
-                    className="bg-primary-background p-3 sm:p-4 flex justify-center items-center hover:bg-primary-dark transition-colors duration-200 cursor-pointer"
-                    aria-label="Submit"
-                  >
-                    <img 
-                      src="/images/img_right_arrow.png" 
-                      alt="Arrow"
-                      className="w-5 h-5 sm:w-6 sm:h-6"
-                    />
-                  </button>
-                </div>
+              {/* Book Consultation Button */}
+              <div className="flex justify-center items-center w-full mt-8 sm:mt-12 px-4">
+                <button
+                  onClick={handleBookConsultation}
+                  className="bg-white w-[183px] h-[41px] sm:w-auto sm:h-auto sm:px-12 sm:py-5 rounded-[20px] shadow-lg text-primary-background text-base sm:text-lg font-lato font-bold hover:scale-105 active:scale-95 transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-primary-background focus:ring-offset-2"
+                >
+                  Book Consultation
+                </button>
               </div>
             </div>
           </div>
